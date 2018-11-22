@@ -1,0 +1,24 @@
+# The digit ID of the server you wish to archive
+server = "..."
+
+# The digit ID of the channel you wish to archive
+# If you want to archive every channel, set this to the main channel ID
+channel = "..."
+
+# Your discord account's digit ID
+user_id = "..."
+
+# Your user token
+user_token = "..."
+
+# Your browser cookie
+user_cookie = "__cfduid=..."
+
+# Should we backup any images or files you uploaded? (true/false)
+save_attachments = false
+
+# Should we delete messages after archiving? (true/false)
+delete_messages = false
+
+# Should we only go through one channel? (true/false)
+only_channel = true
