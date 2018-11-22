@@ -11,6 +11,8 @@ go build discord-archive-and-delete.go
 
 ### Example config
 
+Place a file called `config.toml` in the same directory as discord-archive-and-delete with the following values
+
 ```toml
 # The digit ID of the server you wish to archive
 server = "..."
@@ -43,7 +45,7 @@ only_channel = true
 1. Enable ["Developer Mode"](https://support.discordapp.com/hc/article_attachments/115002742731/mceclip0.png)
 2. Open the Developer Console (`Ctrl + Shift + I`)
 3. In the console go to Application tab, then -> Storage -> [Local Storage](https://my.mixtape.moe/gzblfv.png)
-4. Refresh Discord (Ctrl+R)
+4. Refresh Discord (`Ctrl + R`)
 5. Copy the value for [`token`](https://my.mixtape.moe/unfkig.png)
 6. Paste as the value for `user_token` in config.toml
 7. Go to [Cookies](https://my.mixtape.moe/usqwwj.png) in the same Application tab
