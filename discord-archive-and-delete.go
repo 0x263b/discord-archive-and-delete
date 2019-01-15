@@ -7,6 +7,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os"
+	"path"
 	"sort"
 	"time"
 
@@ -149,9 +150,15 @@ func stringInSlice(a string, list []string) bool {
 
 func main() {
 
+	ex, err := os.Executable()
+	if err != nil {
+		panic(err)
+	}
+	exPath := path.Dir(ex)
+
 	// Load config
 	var config Config
-	if _, err := toml.DecodeFile("./config.toml", &config); err != nil {
+	if _, err := toml.DecodeFile(exPath+"/config.toml", &config); err != nil {
 		fmt.Println(err)
 		return
 	}
@@ -256,7 +263,7 @@ func main() {
 					panic(err)
 				}
 
-				saved += 1
+				saved++
 			}
 		}
 
@@ -275,7 +282,11 @@ func main() {
 				fmt.Printf("Error deleting message: %s (%d)\n", msg.ID, response.StatusCode)
 			}
 
-			deleted += 1
+			deleted++
+
+			if deleted%100 == 0 {
+				fmt.Printf("Deleted %d messages\n", deleted)
+			}
 
 			// Sleep to avoid rate limit
 			time.Sleep(500 * time.Millisecond)
