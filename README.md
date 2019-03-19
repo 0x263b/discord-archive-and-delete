@@ -9,7 +9,7 @@ go get -u github.com/BurntSushi/toml
 go build discord-archive-and-delete.go
 ```
 
-### Example config
+### Example configuration
 
 Place a file called `config.toml` in the same directory as discord-archive-and-delete with the following values
 
@@ -40,7 +40,7 @@ delete_messages = false
 only_channel = true
 ```
 
-### Usage
+### Configuring
 
 1. Enable ["Developer Mode"](https://support.discordapp.com/hc/article_attachments/115002742731/mceclip0.png)
 2. Open the Developer Console (`Ctrl + Shift + I`)
@@ -60,3 +60,22 @@ only_channel = true
 16. If you want to save the files/attachments you've uploaded, set `save_attachments` to `true`
 17. If you want to delete all your messages, set `delete_messages` to `true`
 18. If you want to only archive one channel, set `only_channel` to `true`. If you want to archive every channel, set it to `false`
+
+### Usage
+
+**MacOS or GNU/Linux**
+
+Open a terminal window and `cd` into the directory containing `discord-archive-and-delete` and `config.toml`
+
+```
+chmod u+x discord-archive-and-delete
+./discord-archive-and-delete
+```
+
+**Windows**
+
+Open a PowerShell or Command Prompt window then `cd` into the folder containing `discord-archive-and-delete.exe` and `config.toml`
+
+```
+.\discord-archive-and-delete.exe
+```
